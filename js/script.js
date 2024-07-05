@@ -33,7 +33,7 @@ const alp = [
   "y",
   "z",
 ];
-const symbs = ["@", "!", "^", "%", "_", ".", "|"];
+const symbs = ["@", "!", "^", "%", "_", ".", "|", "#", "&", "$", "*", "?"];
 
 // check | pick | return input (sum)
 
@@ -44,7 +44,7 @@ function checkPickedItems(length) {
 
     const randomPickLetters = Math.floor(Math.random() * 26);
     const randomPickNumbers = Math.floor(Math.random() * 10);
-    const randomPickSymbols = Math.floor(Math.random() * 7);
+    const randomPickSymbols = Math.floor(Math.random() * 12);
     const randonPick = Math.random();
 
     // random checks and input sum
@@ -78,3 +78,33 @@ function generatePassword() {
     password.value = "Select at least one!";
   }
 }
+// function generatePassword() {
+//   const length = passwordLength.value;
+//   const selectedCharacterSets = [];
+
+//   if (upperCase.checked) {
+//     selectedCharacterSets.push(...alp.map((letter) => letter.toUpperCase()));
+//   }
+//   if (lowerCase.checked) {
+//     selectedCharacterSets.push(...alp);
+//   }
+//   if (numbers.checked) {
+//     selectedCharacterSets.push(...nums.map(String));
+//   }
+//   if (symbols.checked) {
+//     selectedCharacterSets.push(...symbs);
+//   }
+
+//   if (selectedCharacterSets.length === 0) {
+//     password.value = "Select at least one!";
+//     return;
+//   }
+
+//   let sum = "";
+//   for (let i = 0; sum.length < length; i++) {
+//     const randomIndex = Math.floor(Math.random() * selectedCharacterSets.length);
+//     sum += selectedCharacterSets[randomIndex];
+//   }
+
+//   password.value = sum;
+// }
